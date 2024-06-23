@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -209,7 +209,7 @@ Forked/branched off of SWE-agent? Please use our latest formatting to resolve me
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -814,6 +814,8 @@ Forked/branched off of SWE-agent? Please use our latest formatting to resolve me
       
         
       
+        
+      
     
     
     
@@ -917,6 +919,27 @@ Forked/branched off of SWE-agent? Please use our latest formatting to resolve me
   
   <span class="md-ellipsis">
     Environment variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker images
   </span>
   
 
@@ -1746,7 +1769,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
               <details class="quote">
                 <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">110</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
 <span class="normal">111</span>
 <span class="normal">112</span>
 <span class="normal">113</span>
@@ -1763,13 +1792,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal">124</span>
 <span class="normal">125</span>
 <span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EnvHook</span><span class="p">:</span>
+<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">EnvHook</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Hook to be used in `SWEEnv`.</span>
 
 <span class="sd">    Subclass this class, add functionality and add it with `SWEEEnv.add_hook(hook)`.</span>
@@ -1823,8 +1846,8 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
-<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">126</span>
+<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when the environment is closed&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -1890,13 +1913,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_copy_repo_started</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">repo_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">repo_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_copy_repo_started</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">repo_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">repo_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets called when the repository is being cloned to the container</span>
 
 <span class="sd">    Args:</span>
@@ -1924,8 +1947,8 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
-<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
+<span class="normal">113</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets called when the hook is added&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -1948,8 +1971,8 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_install_env_started</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">123</span>
+<span class="normal">124</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_install_env_started</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when we start installing the environment&quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -1989,7 +2012,16 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
               <details class="quote">
                 <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 59</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
 <span class="normal"> 60</span>
 <span class="normal"> 61</span>
 <span class="normal"> 62</span>
@@ -2031,13 +2063,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">EnvironmentArguments</span><span class="p">(</span><span class="n">FrozenSerializable</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Configure data sources and setup instructions for the environment in which we solve the tasks.&quot;&quot;&quot;</span>
 
@@ -2079,12 +2105,15 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The &#39;timeout&#39; argument is deprecated and has no effect.&quot;</span><span class="p">)</span>
+            <span class="n">default_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The &#39;timeout&#39; argument is deprecated and has no effect.&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_task_images</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
                 <span class="s2">&quot;Not allowed to use persistent container with caching task images &quot;</span>
                 <span class="s2">&quot;(probably doesn&#39;t make sense and takes excessive space).&quot;</span>
             <span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Set container_name to None if you don&#39;t want to use a persistent container.&quot;</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
               </details>
@@ -2129,7 +2158,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
               <details class="quote">
                 <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 136</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 130</span>
+<span class="normal"> 131</span>
+<span class="normal"> 132</span>
+<span class="normal"> 133</span>
+<span class="normal"> 134</span>
+<span class="normal"> 135</span>
+<span class="normal"> 136</span>
 <span class="normal"> 137</span>
 <span class="normal"> 138</span>
 <span class="normal"> 139</span>
@@ -3140,7 +3175,21 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal">1144</span>
 <span class="normal">1145</span>
 <span class="normal">1146</span>
-<span class="normal">1147</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SWEEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
+<span class="normal">1147</span>
+<span class="normal">1148</span>
+<span class="normal">1149</span>
+<span class="normal">1150</span>
+<span class="normal">1151</span>
+<span class="normal">1152</span>
+<span class="normal">1153</span>
+<span class="normal">1154</span>
+<span class="normal">1155</span>
+<span class="normal">1156</span>
+<span class="normal">1157</span>
+<span class="normal">1158</span>
+<span class="normal">1159</span>
+<span class="normal">1160</span>
+<span class="normal">1161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SWEEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Gym environment for SWE-bench. This class should handle all communication with the docker container.&quot;&quot;&quot;</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;swe_main&quot;</span>
@@ -3155,10 +3204,11 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="bp">self</span><span class="o">.</span><span class="n">communicate_output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">container_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">install_environment</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">install_environment</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="s2">&quot;SWEEnv&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">persistent</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">container_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span> <span class="kc">None</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+            <span class="c1"># fixme: This creates problems if we have multiple instances of this class</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="c1">#: The commit hash of the swe-agent repository</span>
@@ -3169,7 +3219,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
             <span class="k">raise</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Failed to get commit hash for this repo: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Failed to get commit hash for this repo: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_github_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">keys_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GITHUB_TOKEN&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
 
@@ -3196,7 +3246,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="bp">self</span><span class="o">.</span><span class="n">clean_multi_line_functions</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">EnvHook</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Environment initialization took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Environment initialization took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_get_cached_task_image_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -3253,12 +3303,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repo_name</span><span class="si">}</span><span class="s2"> not found in container, cloning...&quot;</span><span class="p">)</span>
             <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">token_prefix</span><span class="si">}</span><span class="s2">github.com/swe-bench/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repo_name</span><span class="si">}</span><span class="s2">.git&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Trying to clone from non-mirror...&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Trying to clone from non-mirror...&quot;</span><span class="p">)</span>
             <span class="n">clone_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">token_prefix</span><span class="si">}</span><span class="s2">github.com/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;repo&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.git&quot;</span>
-        <span class="n">clone_method</span> <span class="o">=</span> <span class="n">keys_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SWE_AGENT_CLONE_METHOD&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;sparse&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sparse&quot;</span><span class="p">,</span> <span class="s2">&quot;full&quot;</span><span class="p">])</span>
+        <span class="n">clone_method</span> <span class="o">=</span> <span class="n">keys_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;SWE_AGENT_CLONE_METHOD&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;shallow&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;shallow&quot;</span><span class="p">,</span> <span class="s2">&quot;full&quot;</span><span class="p">])</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistent</span><span class="p">:</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Falling back to full cloning method due to multiple instances or persistent container&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">clone_method</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">clone_method</span> <span class="o">==</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                 <span class="nb">input</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;git clone </span><span class="si">{</span><span class="n">clone_url</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repo_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
@@ -3318,17 +3369,17 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">cache_task_images</span><span class="p">:</span>
             <span class="n">cached_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cached_task_image_name</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">image_exists</span><span class="p">(</span><span class="n">cached_image</span><span class="p">):</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restore environment from cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restore environment from cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># stop current container</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_init_container</span><span class="p">(</span><span class="n">cached_image</span><span class="o">=</span><span class="n">cached_image</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;export $(xargs &lt;/.env)&quot;</span><span class="p">)</span>
                 <span class="n">envs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables restored from the image:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables restored from the image:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">apply_test_patch</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_apply_test_patch</span><span class="p">()</span>
                 <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">info</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2"> not found, rebuilding task environment...&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2"> not found, rebuilding task environment...&quot;</span><span class="p">)</span>
 
         <span class="c1"># Clone repository if not already cloned</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s2">&quot;cd /&quot;</span><span class="p">)</span>
@@ -3387,11 +3438,11 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">cache_task_images</span><span class="p">:</span>
             <span class="n">envs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables to save:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables to save:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env &gt;&gt; /.env&quot;</span><span class="p">)</span>
             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>  <span class="c1"># mypy</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">cached_image</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Container with environment </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> cached as image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Container with environment </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> cached as image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">apply_test_patch</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_apply_test_patch</span><span class="p">()</span>
@@ -3447,7 +3498,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                 <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;submitted (</span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">)&quot;</span>
                 <span class="n">info</span><span class="p">[</span><span class="s2">&quot;submission&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">submission</span>
                 <span class="n">observation</span> <span class="o">=</span> <span class="s2">&quot;Exited (autosubmitted)&quot;</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Exiting with autosubmission&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Exiting with autosubmission&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
                 <span class="k">raise</span>
@@ -3467,24 +3518,24 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">EXECUTION TIMED OUT AND INTERRUPT FAILED. RESTARTING PROCESS.&quot;</span>
                 <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to interrupt container: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to interrupt container: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
                 <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
         <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">COMMAND FAILED TO EXECUTE. RESTARTING PROCESS.&quot;</span>
             <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to execute command: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to execute command: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
         <span class="k">except</span> <span class="ne">BrokenPipeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">BROKEN PIPE ERROR. RESTARTING PROCESS.&quot;</span>
             <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Broken pipe error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Broken pipe error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">EXECUTION FAILED OR COMMAND MALFORMED&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unknown exception&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unknown exception&quot;</span><span class="p">)</span>
 
         <span class="c1"># Record submission and end episode if `submit` keyword found</span>
         <span class="n">submission</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_submission</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
@@ -3506,7 +3557,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
             <span class="k">raise</span>
         <span class="k">except</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Errors when exiting container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Errors when exiting container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>  <span class="c1"># mypy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -3514,8 +3565,14 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistent</span><span class="p">:</span>
             <span class="c1"># stopping is Podman specific, but doesn&#39;t hurt to include</span>
             <span class="c1"># https://stackoverflow.com/a/32428199/</span>
-            <span class="c1"># Sleeping to avoid https://github.com/princeton-nlp/SWE-agent/issues/496 ??</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="c1"># Want to avoid https://github.com/princeton-nlp/SWE-agent/issues/496</span>
+            <span class="c1"># Note that container_obj.status might not be updated throughout the container</span>
+            <span class="c1"># lifecycle, so let&#39;s get the container_obj again</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="o">=</span> <span class="n">docker</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get fresh container object: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;paused&quot;</span><span class="p">,</span> <span class="s2">&quot;exited&quot;</span><span class="p">,</span> <span class="s2">&quot;dead&quot;</span><span class="p">,</span> <span class="s2">&quot;stopping&quot;</span><span class="p">}:</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
@@ -3532,6 +3589,10 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                 <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
                 <span class="k">raise</span>
+            <span class="k">except</span> <span class="n">docker</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">NotFound</span><span class="p">:</span>
+                <span class="c1"># We already tried to exit the container, so it&#39;s actually good if</span>
+                <span class="c1"># it&#39;s not found</span>
+                <span class="k">pass</span>
             <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to remove container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -3579,7 +3640,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="n">image_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_name</span>
         <span class="k">if</span> <span class="n">cached_image</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">image_name</span> <span class="o">=</span> <span class="n">cached_image</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached image: </span><span class="si">{</span><span class="n">image_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using cached image: </span><span class="si">{</span><span class="n">image_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistent</span><span class="p">:</span>
             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
@@ -3601,7 +3662,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="p">)</span>
             <span class="k">except</span> <span class="n">docker</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">NotFound</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t find container. Let&#39;s wait and retry.&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t find container. Let&#39;s wait and retry.&quot;</span><span class="p">)</span>
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">break</span>
@@ -3642,7 +3703,9 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Experimental version of `_communicate`&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="n">command_suffix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;echo </span><span class="si">{</span><span class="n">PROCESS_DONE_MARKER_START</span><span class="si">}</span><span class="s2">$?</span><span class="si">{</span><span class="n">PROCESS_DONE_MARKER_END</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="c1"># Sleep to ensure that the exit code is in the last line</span>
+        <span class="c1"># See https://github.com/princeton-nlp/SWE-agent/issues/595</span>
+        <span class="n">command_suffix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;sleep 0.01; echo </span><span class="si">{</span><span class="n">PROCESS_DONE_MARKER_START</span><span class="si">}</span><span class="s2">$?</span><span class="si">{</span><span class="n">PROCESS_DONE_MARKER_END</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">cmd</span> <span class="o">=</span> <span class="nb">input</span> <span class="k">if</span> <span class="nb">input</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="nb">input</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -3656,7 +3719,12 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to communicate with container&quot;</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
-        <span class="n">buffer</span><span class="p">,</span> <span class="n">exit_code</span> <span class="o">=</span> <span class="n">read_with_timeout_experimental</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">,</span> <span class="n">timeout_duration</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">buffer</span><span class="p">,</span> <span class="n">exit_code</span> <span class="o">=</span> <span class="n">read_with_timeout_experimental</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="p">,</span> <span class="n">timeout_duration</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Read with timeout failed on input:</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="se">\n</span><span class="s2">---&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">exit_code</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">buffer</span>
 
@@ -3692,7 +3760,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read with timeout failed on input:</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="si">{</span><span class="nb">input</span><span class="si">}</span><span class="se">\n</span><span class="s2">---&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">e</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">exit_code</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Container crashed. Failed to get exit code. Output:</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="si">{</span><span class="n">buffer</span><span class="si">}</span><span class="se">\n</span><span class="s2">---&quot;</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Failed to get exit code. Failed to get exit code. Output:</span><span class="se">\n</span><span class="s2">---</span><span class="se">\n</span><span class="si">{</span><span class="n">buffer</span><span class="si">}</span><span class="se">\n</span><span class="s2">---&quot;</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">exit_code</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">buffer</span>
@@ -3828,7 +3896,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
         <span class="k">if</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">&quot;problem_statement_source&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;swe-bench&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">&quot;repo_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;local&quot;</span>
         <span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">environment_setup</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                 <span class="s2">&quot;install_environment is set to True, but the data path is a GitHub URL &quot;</span>
                 <span class="s2">&quot;without an environment config file (environment_config key/flag). &quot;</span>
                 <span class="s2">&quot;Skipping conda environment installation.&quot;</span><span class="p">,</span>
@@ -3890,7 +3958,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
                 <span class="c1"># Write reqs to requirements.txt in docker container</span>
                 <span class="n">content_reqs</span> <span class="o">=</span> <span class="n">get_requirements</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">)</span>
                 <span class="n">copy_file_to_container</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="p">,</span> <span class="n">content_reqs</span><span class="p">,</span> <span class="n">PATH_TO_REQS</span><span class="p">)</span>
@@ -3904,7 +3972,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install requirements.txt&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed requirements from requirements.txt&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed requirements from requirements.txt&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">PATH_TO_REQS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">packages</span> <span class="o">==</span> <span class="s2">&quot;environment.yml&quot;</span><span class="p">:</span>
                 <span class="c1"># Write environment.yml to file</span>
@@ -3924,14 +3992,14 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
                         <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
                     <span class="c1"># Install packages</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                         <span class="sa">f</span><span class="s2">&quot;conda env update -f </span><span class="si">{</span><span class="n">PATH_TO_ENV_YML</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install environment.yml&quot;</span><span class="p">,</span>
                         <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed packages from environment.yml&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed packages from environment.yml&quot;</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="c1"># Create environment + install packages</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
@@ -3939,7 +4007,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment with environment.yml&quot;</span><span class="p">,</span>
                         <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment with environment.yml&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment with environment.yml&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">PATH_TO_ENV_YML</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">python_env</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;python</span><span class="si">{</span><span class="n">install_configs</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -3949,8 +4017,9 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to clone conda environment&quot;</span><span class="p">,</span>
                         <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cloned python conda environment&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cloned python conda environment&quot;</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find </span><span class="si">{</span><span class="n">python_env</span><span class="si">}</span><span class="s2">, creating new environment&quot;</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                         <span class="sa">f</span><span class="s2">&quot;conda create -n </span><span class="si">{</span><span class="n">env_name</span><span class="si">}</span><span class="s2"> python=</span><span class="si">{</span><span class="n">install_configs</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> -y&quot;</span><span class="p">,</span>
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
@@ -3966,7 +4035,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                         <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install packages&quot;</span><span class="p">,</span>
                         <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed conda packages&quot;</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed conda packages&quot;</span><span class="p">)</span>
             <span class="c1"># Install extra pip packages if specified</span>
             <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pip_packages&quot;</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
@@ -3974,7 +4043,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install pip packages&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed extra pip dependencies&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed extra pip dependencies&quot;</span><span class="p">)</span>
 
         <span class="c1"># Activate environment</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;conda activate </span><span class="si">{</span><span class="n">env_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to activate conda environment&quot;</span><span class="p">)</span>
@@ -3987,7 +4056,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                     <span class="n">pre_install_cmd</span><span class="p">,</span>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Pre-install commands failed to execute successfully&quot;</span><span class="p">,</span>
                 <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran pre-install commands&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran pre-install commands&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Installing </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repo_name</span><span class="si">}</span><span class="s2"> at base commit...&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;install&quot;</span><span class="p">):</span>
             <span class="n">install_cmd</span> <span class="o">=</span> <span class="n">install_configs</span><span class="p">[</span><span class="s2">&quot;install&quot;</span><span class="p">]</span>
@@ -3996,7 +4065,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Install command failed to execute successfully&quot;</span><span class="p">,</span>
                 <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran install command&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran install command&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;post_install&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Running post-install commands...&quot;</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">post_install_cmd</span> <span class="ow">in</span> <span class="n">install_configs</span><span class="p">[</span><span class="s2">&quot;post_install&quot;</span><span class="p">]:</span>
@@ -4004,9 +4073,9 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                     <span class="n">post_install_cmd</span><span class="p">,</span>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Post-install commands failed to execute successfully&quot;</span><span class="p">,</span>
                 <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran post-install commands&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran post-install commands&quot;</span><span class="p">)</span>
 
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installation step took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installation step took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_commands</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -4064,7 +4133,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="sd">            trajectory: Trajectory of actions taken by the agent</span>
 <span class="sd">            _dry_run: Whether to actually push anything or just simulate it</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Opening PR&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Opening PR&quot;</span><span class="p">)</span>
         <span class="c1"># TODO: have better way of handling this</span>
         <span class="c1"># Adding random string suffix to avoid name conflicts if we had a previously failed run</span>
         <span class="n">issue_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span>
@@ -4115,7 +4184,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_github_token</span><span class="p">:</span>
                 <span class="n">token_prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_github_token</span><span class="si">}</span><span class="s2">@&quot;</span>
             <span class="n">fork_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">token_prefix</span><span class="si">}</span><span class="s2">github.com/</span><span class="si">{</span><span class="n">forker</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using fork: </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using fork: </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                 <span class="nb">input</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;git remote add fork </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create new git remote&quot;</span><span class="p">,</span>
@@ -4147,7 +4216,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
                 <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
                 <span class="n">draft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
                 <span class="sa">f</span><span class="s2">&quot;🎉 PR created as a draft at </span><span class="si">{</span><span class="n">pr_info</span><span class="o">.</span><span class="n">html_url</span><span class="si">}</span><span class="s2">. Please review it carefully, push &quot;</span>
                 <span class="s2">&quot;any required changes onto the branch and then click &quot;</span>
                 <span class="s2">&quot;&#39;Ready for Review&#39; to bring it to the attention of the maintainers.&quot;</span><span class="p">,</span>
@@ -4182,21 +4251,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1004</span>
-<span class="normal">1005</span>
-<span class="normal">1006</span>
-<span class="normal">1007</span>
-<span class="normal">1008</span>
-<span class="normal">1009</span>
-<span class="normal">1010</span>
-<span class="normal">1011</span>
-<span class="normal">1012</span>
-<span class="normal">1013</span>
-<span class="normal">1014</span>
-<span class="normal">1015</span>
-<span class="normal">1016</span>
-<span class="normal">1017</span>
-<span class="normal">1018</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1018</span>
 <span class="normal">1019</span>
 <span class="normal">1020</span>
 <span class="normal">1021</span>
@@ -4208,7 +4263,21 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal">1027</span>
 <span class="normal">1028</span>
 <span class="normal">1029</span>
-<span class="normal">1030</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_commands</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">1030</span>
+<span class="normal">1031</span>
+<span class="normal">1032</span>
+<span class="normal">1033</span>
+<span class="normal">1034</span>
+<span class="normal">1035</span>
+<span class="normal">1036</span>
+<span class="normal">1037</span>
+<span class="normal">1038</span>
+<span class="normal">1039</span>
+<span class="normal">1040</span>
+<span class="normal">1041</span>
+<span class="normal">1042</span>
+<span class="normal">1043</span>
+<span class="normal">1044</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_commands</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">commands</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Adds custom commands to container</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4258,14 +4327,14 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">204</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
 <span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">:</span> <span class="n">EnvHook</span><span class="p">):</span>
+<span class="normal">206</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">add_hook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook</span><span class="p">:</span> <span class="n">EnvHook</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add `EnvHook` to the environment.</span>
 
 <span class="sd">    This allows to inject custom functionality at different stages of the environment</span>
@@ -4294,7 +4363,11 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">492</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
 <span class="normal">493</span>
 <span class="normal">494</span>
 <span class="normal">495</span>
@@ -4335,7 +4408,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal">530</span>
 <span class="normal">531</span>
 <span class="normal">532</span>
-<span class="normal">533</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Handle environment shutdown</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4345,7 +4424,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
     <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
         <span class="k">raise</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Errors when exiting container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Errors when exiting container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>  <span class="c1"># mypy</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -4353,8 +4432,14 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
     <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistent</span><span class="p">:</span>
         <span class="c1"># stopping is Podman specific, but doesn&#39;t hurt to include</span>
         <span class="c1"># https://stackoverflow.com/a/32428199/</span>
-        <span class="c1"># Sleeping to avoid https://github.com/princeton-nlp/SWE-agent/issues/496 ??</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="c1"># Want to avoid https://github.com/princeton-nlp/SWE-agent/issues/496</span>
+        <span class="c1"># Note that container_obj.status might not be updated throughout the container</span>
+        <span class="c1"># lifecycle, so let&#39;s get the container_obj again</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_name</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="o">=</span> <span class="n">docker</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container_name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get fresh container object: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">status</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;paused&quot;</span><span class="p">,</span> <span class="s2">&quot;exited&quot;</span><span class="p">,</span> <span class="s2">&quot;dead&quot;</span><span class="p">,</span> <span class="s2">&quot;stopping&quot;</span><span class="p">}:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
@@ -4371,6 +4456,10 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
             <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
             <span class="k">raise</span>
+        <span class="k">except</span> <span class="n">docker</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">NotFound</span><span class="p">:</span>
+            <span class="c1"># We already tried to exit the container, so it&#39;s actually good if</span>
+            <span class="c1"># it&#39;s not found</span>
+            <span class="k">pass</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to remove container&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -4450,20 +4539,7 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">700</span>
-<span class="normal">701</span>
-<span class="normal">702</span>
-<span class="normal">703</span>
-<span class="normal">704</span>
-<span class="normal">705</span>
-<span class="normal">706</span>
-<span class="normal">707</span>
-<span class="normal">708</span>
-<span class="normal">709</span>
-<span class="normal">710</span>
-<span class="normal">711</span>
-<span class="normal">712</span>
-<span class="normal">713</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">713</span>
 <span class="normal">714</span>
 <span class="normal">715</span>
 <span class="normal">716</span>
@@ -4478,7 +4554,20 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 <span class="normal">725</span>
 <span class="normal">726</span>
 <span class="normal">727</span>
-<span class="normal">728</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">communicate</span><span class="p">(</span>
+<span class="normal">728</span>
+<span class="normal">729</span>
+<span class="normal">730</span>
+<span class="normal">731</span>
+<span class="normal">732</span>
+<span class="normal">733</span>
+<span class="normal">734</span>
+<span class="normal">735</span>
+<span class="normal">736</span>
+<span class="normal">737</span>
+<span class="normal">738</span>
+<span class="normal">739</span>
+<span class="normal">740</span>
+<span class="normal">741</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">communicate</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="nb">input</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">timeout_duration</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
@@ -4607,25 +4696,25 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">730</span>
-<span class="normal">731</span>
-<span class="normal">732</span>
-<span class="normal">733</span>
-<span class="normal">734</span>
-<span class="normal">735</span>
-<span class="normal">736</span>
-<span class="normal">737</span>
-<span class="normal">738</span>
-<span class="normal">739</span>
-<span class="normal">740</span>
-<span class="normal">741</span>
-<span class="normal">742</span>
-<span class="normal">743</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">743</span>
 <span class="normal">744</span>
 <span class="normal">745</span>
 <span class="normal">746</span>
 <span class="normal">747</span>
-<span class="normal">748</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">communicate_with_handling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout_duration</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="normal">748</span>
+<span class="normal">749</span>
+<span class="normal">750</span>
+<span class="normal">751</span>
+<span class="normal">752</span>
+<span class="normal">753</span>
+<span class="normal">754</span>
+<span class="normal">755</span>
+<span class="normal">756</span>
+<span class="normal">757</span>
+<span class="normal">758</span>
+<span class="normal">759</span>
+<span class="normal">760</span>
+<span class="normal">761</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">communicate_with_handling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout_duration</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Wrapper for communicate function that raises error if return code is non-zero</span>
 
@@ -4666,13 +4755,13 @@ lifecycle, in particular to connect SWE-agent to a new interface (like a GUI).</
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">750</span>
-<span class="normal">751</span>
-<span class="normal">752</span>
-<span class="normal">753</span>
-<span class="normal">754</span>
-<span class="normal">755</span>
-<span class="normal">756</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_available_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">763</span>
+<span class="normal">764</span>
+<span class="normal">765</span>
+<span class="normal">766</span>
+<span class="normal">767</span>
+<span class="normal">768</span>
+<span class="normal">769</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_available_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns list of available actions in current environment state</span>
 
@@ -4752,22 +4841,22 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">758</span>
-<span class="normal">759</span>
-<span class="normal">760</span>
-<span class="normal">761</span>
-<span class="normal">762</span>
-<span class="normal">763</span>
-<span class="normal">764</span>
-<span class="normal">765</span>
-<span class="normal">766</span>
-<span class="normal">767</span>
-<span class="normal">768</span>
-<span class="normal">769</span>
-<span class="normal">770</span>
-<span class="normal">771</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">771</span>
 <span class="normal">772</span>
-<span class="normal">773</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_pids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_pids</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="normal">773</span>
+<span class="normal">774</span>
+<span class="normal">775</span>
+<span class="normal">776</span>
+<span class="normal">777</span>
+<span class="normal">778</span>
+<span class="normal">779</span>
+<span class="normal">780</span>
+<span class="normal">781</span>
+<span class="normal">782</span>
+<span class="normal">783</span>
+<span class="normal">784</span>
+<span class="normal">785</span>
+<span class="normal">786</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_pids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">all_pids</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Gets list of processes running inside docker container</span>
 
@@ -4856,21 +4945,21 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">775</span>
-<span class="normal">776</span>
-<span class="normal">777</span>
-<span class="normal">778</span>
-<span class="normal">779</span>
-<span class="normal">780</span>
-<span class="normal">781</span>
-<span class="normal">782</span>
-<span class="normal">783</span>
-<span class="normal">784</span>
-<span class="normal">785</span>
-<span class="normal">786</span>
-<span class="normal">787</span>
-<span class="normal">788</span>
-<span class="normal">789</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_submission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">788</span>
+<span class="normal">789</span>
+<span class="normal">790</span>
+<span class="normal">791</span>
+<span class="normal">792</span>
+<span class="normal">793</span>
+<span class="normal">794</span>
+<span class="normal">795</span>
+<span class="normal">796</span>
+<span class="normal">797</span>
+<span class="normal">798</span>
+<span class="normal">799</span>
+<span class="normal">800</span>
+<span class="normal">801</span>
+<span class="normal">802</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_submission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function for extracting diff patch submission at the end of an episode.</span>
 
@@ -4906,20 +4995,7 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 859</span>
-<span class="normal"> 860</span>
-<span class="normal"> 861</span>
-<span class="normal"> 862</span>
-<span class="normal"> 863</span>
-<span class="normal"> 864</span>
-<span class="normal"> 865</span>
-<span class="normal"> 866</span>
-<span class="normal"> 867</span>
-<span class="normal"> 868</span>
-<span class="normal"> 869</span>
-<span class="normal"> 870</span>
-<span class="normal"> 871</span>
-<span class="normal"> 872</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 872</span>
 <span class="normal"> 873</span>
 <span class="normal"> 874</span>
 <span class="normal"> 875</span>
@@ -5049,7 +5125,21 @@ and parent PIDs</p>
 <span class="normal"> 999</span>
 <span class="normal">1000</span>
 <span class="normal">1001</span>
-<span class="normal">1002</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">install_env</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="normal">1002</span>
+<span class="normal">1003</span>
+<span class="normal">1004</span>
+<span class="normal">1005</span>
+<span class="normal">1006</span>
+<span class="normal">1007</span>
+<span class="normal">1008</span>
+<span class="normal">1009</span>
+<span class="normal">1010</span>
+<span class="normal">1011</span>
+<span class="normal">1012</span>
+<span class="normal">1013</span>
+<span class="normal">1014</span>
+<span class="normal">1015</span>
+<span class="normal">1016</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">install_env</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates conda environment and installs third party dependencies to allow code execution</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -5076,7 +5166,7 @@ and parent PIDs</p>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
                 <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
             <span class="c1"># Write reqs to requirements.txt in docker container</span>
             <span class="n">content_reqs</span> <span class="o">=</span> <span class="n">get_requirements</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">)</span>
             <span class="n">copy_file_to_container</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="p">,</span> <span class="n">content_reqs</span><span class="p">,</span> <span class="n">PATH_TO_REQS</span><span class="p">)</span>
@@ -5090,7 +5180,7 @@ and parent PIDs</p>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install requirements.txt&quot;</span><span class="p">,</span>
                 <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed requirements from requirements.txt&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed requirements from requirements.txt&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">PATH_TO_REQS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">packages</span> <span class="o">==</span> <span class="s2">&quot;environment.yml&quot;</span><span class="p">:</span>
             <span class="c1"># Write environment.yml to file</span>
@@ -5110,14 +5200,14 @@ and parent PIDs</p>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment&quot;</span><span class="p">)</span>
                 <span class="c1"># Install packages</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;conda env update -f </span><span class="si">{</span><span class="n">PATH_TO_ENV_YML</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install environment.yml&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed packages from environment.yml&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed packages from environment.yml&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># Create environment + install packages</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
@@ -5125,7 +5215,7 @@ and parent PIDs</p>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment with environment.yml&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment with environment.yml&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created conda environment with environment.yml&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rm </span><span class="si">{</span><span class="n">PATH_TO_ENV_YML</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">python_env</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;python</span><span class="si">{</span><span class="n">install_configs</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -5135,8 +5225,9 @@ and parent PIDs</p>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to clone conda environment&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cloned python conda environment&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Cloned python conda environment&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find </span><span class="si">{</span><span class="n">python_env</span><span class="si">}</span><span class="s2">, creating new environment&quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;conda create -n </span><span class="si">{</span><span class="n">env_name</span><span class="si">}</span><span class="s2"> python=</span><span class="si">{</span><span class="n">install_configs</span><span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> -y&quot;</span><span class="p">,</span>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create conda environment&quot;</span><span class="p">,</span>
@@ -5152,7 +5243,7 @@ and parent PIDs</p>
                     <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install packages&quot;</span><span class="p">,</span>
                     <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
                 <span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed conda packages&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed conda packages&quot;</span><span class="p">)</span>
         <span class="c1"># Install extra pip packages if specified</span>
         <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pip_packages&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
@@ -5160,7 +5251,7 @@ and parent PIDs</p>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to install pip packages&quot;</span><span class="p">,</span>
                 <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
             <span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed extra pip dependencies&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Installed extra pip dependencies&quot;</span><span class="p">)</span>
 
     <span class="c1"># Activate environment</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;conda activate </span><span class="si">{</span><span class="n">env_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to activate conda environment&quot;</span><span class="p">)</span>
@@ -5173,7 +5264,7 @@ and parent PIDs</p>
                 <span class="n">pre_install_cmd</span><span class="p">,</span>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Pre-install commands failed to execute successfully&quot;</span><span class="p">,</span>
             <span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran pre-install commands&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran pre-install commands&quot;</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Installing </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repo_name</span><span class="si">}</span><span class="s2"> at base commit...&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;install&quot;</span><span class="p">):</span>
         <span class="n">install_cmd</span> <span class="o">=</span> <span class="n">install_configs</span><span class="p">[</span><span class="s2">&quot;install&quot;</span><span class="p">]</span>
@@ -5182,7 +5273,7 @@ and parent PIDs</p>
             <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Install command failed to execute successfully&quot;</span><span class="p">,</span>
             <span class="n">timeout_duration</span><span class="o">=</span><span class="n">LONG_TIMEOUT</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran install command&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran install command&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">install_configs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;post_install&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Running post-install commands...&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">post_install_cmd</span> <span class="ow">in</span> <span class="n">install_configs</span><span class="p">[</span><span class="s2">&quot;post_install&quot;</span><span class="p">]:</span>
@@ -5190,9 +5281,9 @@ and parent PIDs</p>
                 <span class="n">post_install_cmd</span><span class="p">,</span>
                 <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Post-install commands failed to execute successfully&quot;</span><span class="p">,</span>
             <span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran post-install commands&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Ran post-install commands&quot;</span><span class="p">)</span>
 
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installation step took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Installation step took </span><span class="si">%.2f</span><span class="s2"> seconds&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -5214,26 +5305,26 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1032</span>
-<span class="normal">1033</span>
-<span class="normal">1034</span>
-<span class="normal">1035</span>
-<span class="normal">1036</span>
-<span class="normal">1037</span>
-<span class="normal">1038</span>
-<span class="normal">1039</span>
-<span class="normal">1040</span>
-<span class="normal">1041</span>
-<span class="normal">1042</span>
-<span class="normal">1043</span>
-<span class="normal">1044</span>
-<span class="normal">1045</span>
-<span class="normal">1046</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1046</span>
 <span class="normal">1047</span>
 <span class="normal">1048</span>
 <span class="normal">1049</span>
 <span class="normal">1050</span>
-<span class="normal">1051</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">interrupt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">1051</span>
+<span class="normal">1052</span>
+<span class="normal">1053</span>
+<span class="normal">1054</span>
+<span class="normal">1055</span>
+<span class="normal">1056</span>
+<span class="normal">1057</span>
+<span class="normal">1058</span>
+<span class="normal">1059</span>
+<span class="normal">1060</span>
+<span class="normal">1061</span>
+<span class="normal">1062</span>
+<span class="normal">1063</span>
+<span class="normal">1064</span>
+<span class="normal">1065</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">interrupt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Send interrupt signal to container and exhaust stdout buffer with a communicate call</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -5316,21 +5407,7 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1053</span>
-<span class="normal">1054</span>
-<span class="normal">1055</span>
-<span class="normal">1056</span>
-<span class="normal">1057</span>
-<span class="normal">1058</span>
-<span class="normal">1059</span>
-<span class="normal">1060</span>
-<span class="normal">1061</span>
-<span class="normal">1062</span>
-<span class="normal">1063</span>
-<span class="normal">1064</span>
-<span class="normal">1065</span>
-<span class="normal">1066</span>
-<span class="normal">1067</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1067</span>
 <span class="normal">1068</span>
 <span class="normal">1069</span>
 <span class="normal">1070</span>
@@ -5410,14 +5487,28 @@ and parent PIDs</p>
 <span class="normal">1144</span>
 <span class="normal">1145</span>
 <span class="normal">1146</span>
-<span class="normal">1147</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">open_pr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="n">_dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="normal">1147</span>
+<span class="normal">1148</span>
+<span class="normal">1149</span>
+<span class="normal">1150</span>
+<span class="normal">1151</span>
+<span class="normal">1152</span>
+<span class="normal">1153</span>
+<span class="normal">1154</span>
+<span class="normal">1155</span>
+<span class="normal">1156</span>
+<span class="normal">1157</span>
+<span class="normal">1158</span>
+<span class="normal">1159</span>
+<span class="normal">1160</span>
+<span class="normal">1161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">open_pr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">trajectory</span><span class="p">,</span> <span class="n">_dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create PR to repository</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        trajectory: Trajectory of actions taken by the agent</span>
 <span class="sd">        _dry_run: Whether to actually push anything or just simulate it</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Opening PR&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Opening PR&quot;</span><span class="p">)</span>
     <span class="c1"># TODO: have better way of handling this</span>
     <span class="c1"># Adding random string suffix to avoid name conflicts if we had a previously failed run</span>
     <span class="n">issue_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span>
@@ -5468,7 +5559,7 @@ and parent PIDs</p>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_github_token</span><span class="p">:</span>
             <span class="n">token_prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_github_token</span><span class="si">}</span><span class="s2">@&quot;</span>
         <span class="n">fork_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://</span><span class="si">{</span><span class="n">token_prefix</span><span class="si">}</span><span class="s2">github.com/</span><span class="si">{</span><span class="n">forker</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">.git&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using fork: </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using fork: </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">communicate_with_handling</span><span class="p">(</span>
             <span class="nb">input</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;git remote add fork </span><span class="si">{</span><span class="n">fork_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="n">error_msg</span><span class="o">=</span><span class="s2">&quot;Failed to create new git remote&quot;</span><span class="p">,</span>
@@ -5500,7 +5591,7 @@ and parent PIDs</p>
             <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
             <span class="n">draft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;🎉 PR created as a draft at </span><span class="si">{</span><span class="n">pr_info</span><span class="o">.</span><span class="n">html_url</span><span class="si">}</span><span class="s2">. Please review it carefully, push &quot;</span>
             <span class="s2">&quot;any required changes onto the branch and then click &quot;</span>
             <span class="s2">&quot;&#39;Ready for Review&#39; to bring it to the attention of the maintainers.&quot;</span><span class="p">,</span>
@@ -5594,7 +5685,11 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">280</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
 <span class="normal">281</span>
 <span class="normal">282</span>
 <span class="normal">283</span>
@@ -5702,11 +5797,7 @@ and parent PIDs</p>
 <span class="normal">385</span>
 <span class="normal">386</span>
 <span class="normal">387</span>
-<span class="normal">388</span>
-<span class="normal">389</span>
-<span class="normal">390</span>
-<span class="normal">391</span>
-<span class="normal">392</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">apply_test_patch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
+<span class="normal">388</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">apply_test_patch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function to reset container between each task instance.</span>
 
@@ -5740,17 +5831,17 @@ and parent PIDs</p>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">cache_task_images</span><span class="p">:</span>
         <span class="n">cached_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_cached_task_image_name</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">image_exists</span><span class="p">(</span><span class="n">cached_image</span><span class="p">):</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restore environment from cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restore environment from cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># stop current container</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_init_container</span><span class="p">(</span><span class="n">cached_image</span><span class="o">=</span><span class="n">cached_image</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;export $(xargs &lt;/.env)&quot;</span><span class="p">)</span>
             <span class="n">envs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables restored from the image:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables restored from the image:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">apply_test_patch</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_apply_test_patch</span><span class="p">()</span>
             <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">info</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2"> not found, rebuilding task environment...&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cached image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2"> not found, rebuilding task environment...&quot;</span><span class="p">)</span>
 
     <span class="c1"># Clone repository if not already cloned</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="s2">&quot;cd /&quot;</span><span class="p">)</span>
@@ -5809,11 +5900,11 @@ and parent PIDs</p>
 
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">cache_task_images</span><span class="p">:</span>
         <span class="n">envs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables to save:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Environment variables to save:</span><span class="se">\n</span><span class="si">{</span><span class="n">envs</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="s2">&quot;env &gt;&gt; /.env&quot;</span><span class="p">)</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>  <span class="c1"># mypy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">cached_image</span><span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Container with environment </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> cached as image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Container with environment </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">container_obj</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> cached as image </span><span class="si">{</span><span class="n">cached_image</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">apply_test_patch</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_apply_test_patch</span><span class="p">()</span>
@@ -5883,19 +5974,19 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">791</span>
-<span class="normal">792</span>
-<span class="normal">793</span>
-<span class="normal">794</span>
-<span class="normal">795</span>
-<span class="normal">796</span>
-<span class="normal">797</span>
-<span class="normal">798</span>
-<span class="normal">799</span>
-<span class="normal">800</span>
-<span class="normal">801</span>
-<span class="normal">802</span>
-<span class="normal">803</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_shell_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">script_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">804</span>
+<span class="normal">805</span>
+<span class="normal">806</span>
+<span class="normal">807</span>
+<span class="normal">808</span>
+<span class="normal">809</span>
+<span class="normal">810</span>
+<span class="normal">811</span>
+<span class="normal">812</span>
+<span class="normal">813</span>
+<span class="normal">814</span>
+<span class="normal">815</span>
+<span class="normal">816</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_shell_script</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">script_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Run custom script supplied by user at `script_path`</span>
 
 <span class="sd">    Args:</span>
@@ -6011,7 +6102,11 @@ and parent PIDs</p>
 
             <details class="quote">
               <summary>Source code in <code>sweagent/environment/swe_env.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">413</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
 <span class="normal">414</span>
 <span class="normal">415</span>
 <span class="normal">416</span>
@@ -6084,11 +6179,7 @@ and parent PIDs</p>
 <span class="normal">483</span>
 <span class="normal">484</span>
 <span class="normal">485</span>
-<span class="normal">486</span>
-<span class="normal">487</span>
-<span class="normal">488</span>
-<span class="normal">489</span>
-<span class="normal">490</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
+<span class="normal">486</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Runs given action in environment and returns corresponding output</span>
 
@@ -6118,7 +6209,7 @@ and parent PIDs</p>
             <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;submitted (</span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">)&quot;</span>
             <span class="n">info</span><span class="p">[</span><span class="s2">&quot;submission&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">submission</span>
             <span class="n">observation</span> <span class="o">=</span> <span class="s2">&quot;Exited (autosubmitted)&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Exiting with autosubmission&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Exiting with autosubmission&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
             <span class="k">raise</span>
@@ -6138,24 +6229,24 @@ and parent PIDs</p>
         <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">EXECUTION TIMED OUT AND INTERRUPT FAILED. RESTARTING PROCESS.&quot;</span>
             <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to interrupt container: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to interrupt container: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
     <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">COMMAND FAILED TO EXECUTE. RESTARTING PROCESS.&quot;</span>
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to execute command: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to execute command: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
     <span class="k">except</span> <span class="ne">BrokenPipeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">BROKEN PIPE ERROR. RESTARTING PROCESS.&quot;</span>
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;exit_status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;early_exit&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Broken pipe error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Broken pipe error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="se">\n</span><span class="s2">RESTARTING PROCESS.&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reset_container</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">observation</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">info</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="n">observation</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">EXECUTION FAILED OR COMMAND MALFORMED&quot;</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unknown exception&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unknown exception&quot;</span><span class="p">)</span>
 
     <span class="c1"># Record submission and end episode if `submit` keyword found</span>
     <span class="n">submission</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_submission</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
@@ -6277,7 +6368,7 @@ and parent PIDs</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "content.action.edit", "navigation.footer", "content.code.copy", "content.footnote.tooltips", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
